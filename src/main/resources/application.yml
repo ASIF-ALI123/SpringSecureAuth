@@ -1,0 +1,39 @@
+jwt:
+  jwtExpirationInMs: 20000
+  jwtRefreshExpirationInMs: 20000
+ #1800000
+  secret: footpath
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/footpath
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: false
+        use_sql_comments: false
+  mail:
+    host: smtp.gmail.com
+    password: uvhqtsqejcwbbicn
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: debashishmon87@gmail.com
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 222879839476626
+            client-secret: ${fb_secret}
+            scope: public_profile, email, user_birthday, user_gender
+            redirectUri: http://localhost:4200/callback
