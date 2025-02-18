@@ -1,2 +1,2 @@
-# footpath-security
+for learning Spring Security concepts
  
